@@ -40,3 +40,22 @@ Avereage case
 1-> [2,3,4,8,7,9,5,15,6] <br>
 2-> [2,3,4,5,7,9,8,15,6] <br>
 3-> [2,3,4,5,6,9,8,15,7] <br>
+
+# Merge Sort Projesi
+
+## Proje 2
+
+[16,21,11,8,12,22] -> Merge Sort
+1)Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
+
+### Cevap:
+
+[16,21,11],[8,12,22] <br>
+[16,21],[11],[8,12],[22] <br>
+[11,16,21],[8,12,22] <br>
+[8,11,16,21,22] <br>
+
+2)Big-O gösterimini yazınız.
+
+### Cevap:
+O(nlogn)
