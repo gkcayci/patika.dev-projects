@@ -6,7 +6,7 @@
 
 [22,27,16,2,18,6] -> Insertion Sort
 
-1) Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+1)Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
 
 #### Cevap:
 
@@ -15,7 +15,7 @@
 2-> [2,6,16,22,18,27] <br>
 3-> [2,6,16,18,22,27] <br>
 
-2) Big-O gösterimini yazınız.
+2)Big-O gösterimini yazınız.
 
 ### Cevap:
 O(n²)
