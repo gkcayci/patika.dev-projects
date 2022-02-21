@@ -1,18 +1,21 @@
-# SQL Ödev 3
+# SQL Ödev 4
 
-1) country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
+1) film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
 
-```SELECT * FROM country WHERE country LIKE 'A%a'; ``` 
+```SELECT DISTINCT replacement_cost FROM film ;``` 
 
-2) country tablosunda bulunan country sütunundaki ülke isimlerinden en az 6 karakterden oluşan ve sonu 'n' karakteri ile sonlananları sıralayınız.
+2) film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
 
-```SELECT * FROM country WHERE country LIKE '%_____n'; ```
+```SELECT COUNT (DISTINCT replacement_cost) FROM film; ```
 
-3) film tablosunda bulunan title sütunundaki film isimlerinden en az 4 adet büyük ya da küçük harf farketmesizin 'T' karakteri içeren film isimlerini sıralayınız.
+3) film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
 
-``` SELECT * FROM film WHERE title ILIKE '%t%t%t%t'; ```
+```SELECT COUNT (*) FROM film WHERE title LIKE 'T%' AND rating = 'G'; ```
 
-4) film tablosunda bulunan tüm sütunlardaki verilerden title 'C' karakteri ile başlayan ve uzunluğu (length) 90 dan büyük olan ve rental_rate 2.99 olan verileri sıralayınız.
+4) country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?.
 
+``` SELECT COUNT (*) FROM country WHERE country LIKE '%_____' ; ```
 
-``` SELECT * FROM film WHERE title LIKE '%C' AND length > 90 AND rental_rate = 2.99 ; ```
+5) city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+
+``` SELECT COUNT (*) FROM city  WHERE city ILIKE '%R' ; ```
