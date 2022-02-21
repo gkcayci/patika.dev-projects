@@ -1,75 +1,23 @@
-### patika.dev-projects
-
-# Insertion Sort Projesi
-
-## Proje 1
-
-[22,27,16,2,18,6] -> Insertion Sort
-
-1)Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
-
-#### Cevap:
-
-0-> [22,27,16,2,18,6] <br>
-1-> [2,27,16,22,18,6] <br>
-2-> [2,6,16,22,18,27] <br>
-3-> [2,6,16,18,22,27] <br>
-
-2)Big-O gösterimini yazınız.
-
-### Cevap:
-O(n²)
-
-3)Time Complexity: Average case: Aradığımız sayının ortada olması,Worst case: Aradığımız sayının sonda olması, Best case: Aradığımız sayının dizinin en başında olması.
-
-### Cevap:
-Average case : 18
-Worst case : 27
-Best case : 2
-
-4)Dizi sıralandıktan sonra 18 sayısı hangi case kapsamına girer? Yazınız.
-
-### Cevap: 
-Avereage case
+# SQL Ödev 1
 
 
-[7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 4 adımını yazınız.
+1) film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 
-### Cevap:
-0-> [2,3,5,8,7,9,4,15,6] <br>
-1-> [2,3,4,8,7,9,5,15,6] <br>
-2-> [2,3,4,5,7,9,8,15,6] <br>
-3-> [2,3,4,5,6,9,8,15,7] <br>
+``` SELECT title, description FROM film; ```
 
-# Merge Sort Projesi
-
-## Proje 2
-
-[16,21,11,8,12,22] -> Merge Sort
-1)Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
-
-### Cevap:
-
-[16,21,11],[8,12,22] <br>
-[16,21],[11],[8,12],[22] <br>
-[11,16,21],[8,12,22] <br>
-[8,11,16,21,22] <br>
-
-2)Big-O gösterimini yazınız.
-
-### Cevap:
-O(nlogn)
+2) film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız.
 
 
-# Binary Search Tree Projesi
+``` SELECT * FROM film WHERE length > 60 AND length < 75; ``` 
 
-## Proje 3
+3) film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.
 
-[7, 5, 1, 8, 3, 6, 0, 9, 4, 2] dizisinin Binary-Search-Tree aşamalarını yazınız.
+``` SELECT * FROM film WHERE rental_rate = 0.99 AND replacement_cost = 12.99 OR replacement_cost = 28.99;  ```
 
-### Cevap:
-              7
-            5   8
-          1  6    9
-        0  3       
-         2  4
+4) customer tablosunda bulunan first_name sütunundaki değeri 'Mary' olan müşterinin last_name sütunundaki değeri nedir?
+
+``` SELECT last_name FROM customer WHERE first_name = 'Mary'; ```
+
+5) film tablosundaki uzunluğu(length) 50 ten büyük OLMAYIP aynı zamanda rental_rate değeri 2.99 veya 4.99 OLMAYAN verileri sıralayınız.
+
+``` SELECT * FROM film WHERE NOT (length > 50 AND (rental_rate = 2.99 OR rental_rate = 4.99)); ```
