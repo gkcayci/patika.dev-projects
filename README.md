@@ -1,75 +1,13 @@
-### patika.dev-projects
+# SQL Ödev 2
 
-# Insertion Sort Projesi
+1) film tablosunda bulunan tüm sütunlardaki verileri replacement cost değeri 12.99 dan büyük eşit ve 16.99 küçük olma koşuluyla sıralayınız ( BETWEEN - AND yapısını kullanınız.)
 
-## Proje 1
+``` SELECT replacement_cost FROM film WHERE replacement_cost  BETWEEN 12.99 AND 16.99; ``` 
 
-[22,27,16,2,18,6] -> Insertion Sort
+2) actor tablosunda bulunan first_name ve last_name sütunlardaki verileri first_name 'Penelope' veya 'Nick' veya 'Ed' değerleri olması koşuluyla sıralayınız. ( IN operatörünü kullanınız.)
 
-1)Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+```SELECT first_name, last_name FROM actor WHERE first_name IN ('Penelope','Nick','Ed') ```
 
-#### Cevap:
+3) film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
 
-0-> [22,27,16,2,18,6] <br>
-1-> [2,27,16,22,18,6] <br>
-2-> [2,6,16,22,18,27] <br>
-3-> [2,6,16,18,22,27] <br>
-
-2)Big-O gösterimini yazınız.
-
-### Cevap:
-O(n²)
-
-3)Time Complexity: Average case: Aradığımız sayının ortada olması,Worst case: Aradığımız sayının sonda olması, Best case: Aradığımız sayının dizinin en başında olması.
-
-### Cevap:
-Average case : 18
-Worst case : 27
-Best case : 2
-
-4)Dizi sıralandıktan sonra 18 sayısı hangi case kapsamına girer? Yazınız.
-
-### Cevap: 
-Avereage case
-
-
-[7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 4 adımını yazınız.
-
-### Cevap:
-0-> [2,3,5,8,7,9,4,15,6] <br>
-1-> [2,3,4,8,7,9,5,15,6] <br>
-2-> [2,3,4,5,7,9,8,15,6] <br>
-3-> [2,3,4,5,6,9,8,15,7] <br>
-
-# Merge Sort Projesi
-
-## Proje 2
-
-[16,21,11,8,12,22] -> Merge Sort
-1)Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
-
-### Cevap:
-
-[16,21,11],[8,12,22] <br>
-[16,21],[11],[8,12],[22] <br>
-[11,16,21],[8,12,22] <br>
-[8,11,16,21,22] <br>
-
-2)Big-O gösterimini yazınız.
-
-### Cevap:
-O(nlogn)
-
-
-# Binary Search Tree Projesi
-
-## Proje 3
-
-[7, 5, 1, 8, 3, 6, 0, 9, 4, 2] dizisinin Binary-Search-Tree aşamalarını yazınız.
-
-### Cevap:
-              7
-            5   8
-          1  6    9
-        0  3       
-         2  4
+``` SELECT * FROM film WHERE rental_rate IN (0.99, 2.99, 4.99) AND replacement_cost IN(12.99, 15.99, 28.99) ```
