@@ -1,17 +1,21 @@
-# SQL Ödev 7
+# SQL Ödev 1
 
-1) film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
+1) film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 
-```SELECT rating FROM film GROUP BY rating;``` 
+```SELECT title, description FROM film;``` 
 
-2) film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.
+2) film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız. 
 
-```SELECT replacement_cost, COUNT(*) FROM film GROUP BY replacement_cost HAVING COUNT(*) > 50 ORDER BY replacement_cost;```
+```SELECT * FROM film WHERE length > 60 AND length < 75;```
 
-3) customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir? 
+3) film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.
 
-```SELECT store_id, COUNT(*) FROM customer GROUP BY store_id;```
+```SELECT * FROM film WHERE rental_rate = 0.99 AND replacement_cost = 12.99 OR replacement_cost = 28.99;```
 
-4) city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
+4) customer tablosunda bulunan first_name sütunundaki değeri 'Mary' olan müşterinin last_name sütunundaki değeri nedir?
 
-```SELECT country_id, COUNT(city) FROM city GROUP BY country_id ORDER BY COUNT(city_id) DESC LIMIT 1;```
+```SELECT last_name FROM customer WHERE first_name = 'Mary';```
+
+4) film tablosundaki uzunluğu(length) 50 ten büyük OLMAYIP aynı zamanda rental_rate değeri 2.99 veya 4.99 OLMAYAN verileri sıralayınız.
+
+```ELECT * FROM film WHERE NOT(length > 50 AND rental_rate = 2.99 OR rental_rate = 4.99);```
