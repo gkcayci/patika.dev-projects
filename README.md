@@ -1,17 +1,23 @@
-# SQL Ödev 7
+# SQL Ödev 9
 
-1) film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
+1) city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
 
-```SELECT rating FROM film GROUP BY rating;``` 
+```SELECT city ,country 
+FROM city 
+INNER JOIN country
+ON city.country_id = country.country_id ;``` 
 
-2) film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.
+2) customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız
 
-```SELECT replacement_cost, COUNT(*) FROM film GROUP BY replacement_cost HAVING COUNT(*) > 50 ORDER BY replacement_cost;```
+```SELECT payment_id, first_name, last_name 
+FROM customer 
+INNER JOIN payment
+ON customer.customer_id = payment.customer_id ;```
 
-3) customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir? 
+3) customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
 
-```SELECT store_id, COUNT(*) FROM customer GROUP BY store_id;```
-
-4) city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
-
-```SELECT country_id, COUNT(city) FROM city GROUP BY country_id ORDER BY COUNT(city_id) DESC LIMIT 1;```
+```SELECT rental_id, first_name, last_name
+FROM rental
+INNER JOIN customer
+ON rental.customer_id = customer.customer_id ;
+```
