@@ -1,13 +1,46 @@
-# SQL Ödev 10
+# SQL Ödev 11
 
-1) city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz LEFT JOIN sorgusunu yazınız.
+1) actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
 
-```SELECT city.city, country.country FROM city LEFT JOIN country ON city.country_id = country.country_id;``` 
+```
+SELECT first_name FROM actor 
+UNION 
+SELECT first_name FROM customer;
+``` 
 
-2) customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz RIGHT JOIN sorgusunu yazınız.
+2) actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
 
-```SELECT payment.payment_id, customer.first_name, customer.last_name FROM customer RIGHT JOIN payment ON customer.customer_id = payment.customer_id;```
+```
+SELECT first_name FROM actor 
+INTERSECT
+SELECT first_name FROM customer;
+```
 
-3) customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız.
+3) actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım.
 
-```SELECT rental.rental_id, customer.first_name, customer.last_name FROM rental FULL JOIN customer ON customer.customer_id = rental.customer_id;```
+```
+SELECT first_name FROM actor 
+EXCEPT
+SELECT first_name FROM customer;
+```
+
+4) İlk 3 sorguyu tekrar eden veriler için de yapalım.
+
+
+```
+SELECT first_name FROM actor 
+UNION ALL
+SELECT first_name FROM customer;
+```
+
+```
+SELECT first_name FROM actor 
+INTERSECT ALL
+SELECT first_name FROM customer;
+```
+
+```
+SELECT first_name FROM actor 
+EXCEPT ALL
+SELECT first_name FROM customer;
+```
